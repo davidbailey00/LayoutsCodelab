@@ -1,4 +1,4 @@
-package co.zimly.codelab.layoutscodelab
+package co.zimly.codelab.layouts
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import co.zimly.codelab.layoutscodelab.ui.theme.LayoutsCodelabTheme
+import co.zimly.codelab.layouts.ui.theme.LayoutsCodelabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

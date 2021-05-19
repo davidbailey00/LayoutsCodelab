@@ -1,4 +1,4 @@
-package co.zimly.codelab.layoutscodelab.ui.theme
+package co.zimly.codelab.layouts.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

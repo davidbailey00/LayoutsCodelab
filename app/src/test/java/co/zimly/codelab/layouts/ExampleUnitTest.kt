@@ -1,4 +1,4 @@
-package co.zimly.codelab.layoutscodelab
+package co.zimly.codelab.layouts
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package co.zimly.codelab.layoutscodelab.ui.theme
+package co.zimly.codelab.layouts.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
