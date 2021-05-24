@@ -30,12 +30,6 @@ fun SimpleList() {
     }
 }
 
-@Preview
-@Composable
-fun SimpleListPreview() {
-    SimpleList()
-}
-
 @Composable
 fun LazyList() {
     val scrollState = rememberLazyListState()
@@ -45,12 +39,6 @@ fun LazyList() {
             Text("Item #$it")
         }
     }
-}
-
-@Preview
-@Composable
-fun LazyListPreview() {
-    LazyList()
 }
 
 @Composable
