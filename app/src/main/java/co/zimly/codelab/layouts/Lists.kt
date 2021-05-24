@@ -6,14 +6,17 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.coil.rememberCoilPainter
+import kotlinx.coroutines.launch
 
 @Composable
 fun SimpleList() {
@@ -67,11 +70,34 @@ fun ImageListItem(index: Int) {
 
 @Composable
 fun ImageList() {
+    val listSize = 100
     val scrollState = rememberLazyListState()
+    // save the coroutine scope where our animated scroll will be executed
+    val coroutineScope = rememberCoroutineScope()
 
-    LazyColumn(state = scrollState) {
-        items(100) {
-            ImageListItem(it)
+    Column {
+        Row {
+            Button(onClick = {
+                coroutineScope.launch {
+                    scrollState.animateScrollToItem(0)
+                }
+            }) {
+                Text("Scroll to top")
+            }
+
+            Button(onClick = {
+                coroutineScope.launch {
+                    scrollState.animateScrollToItem(listSize - 1)
+                }
+            }) {
+                Text("Scroll to bottom")
+            }
+        }
+
+        LazyColumn(state = scrollState) {
+            items(listSize) {
+                ImageListItem(it)
+            }
         }
     }
 }
